@@ -14,7 +14,7 @@ export default function Products() {
       products: [
         {
           model: 'LactoSure ECO',
-          image: '/images/lactosure-eco.jpg',
+          image: '/images/lactosure-eco-analyzer-500x500.jpg',
           description: 'Basic milk analyzer for small collection centers',
           specs: {
             'Measurement Time': '25-30 seconds',
@@ -31,7 +31,7 @@ export default function Products() {
         },
         {
           model: 'LactoSure ECO-S',
-          image: '/images/lactosure-eco-s.jpg',
+          image: '/images/lactosure-eco-v3-milk-analyzer-500x500.jpeg',
           description: 'Solar-powered milk analyzer for remote areas',
           specs: {
             'Power Source': 'Solar + Battery Backup',
@@ -48,7 +48,7 @@ export default function Products() {
         },
         {
           model: 'LactoSure ECO-SV',
-          image: '/images/lactosure-eco-sv.jpg',
+          image: '/images/lactosure-eco-analyzer-500x500.jpg',
           description: 'Solar + vibro stirrer integrated model',
           specs: {
             'Power': 'Solar + Battery',
@@ -65,7 +65,7 @@ export default function Products() {
         },
         {
           model: 'LactoSure ECO-D',
-          image: '/images/lactosure-eco-d.jpg',
+          image: '/images/LactoSure-Eco-D-V4.jpg',
           description: 'Display model with external monitor',
           specs: {
             'Main Unit': 'LactoSure ECO',
@@ -82,7 +82,7 @@ export default function Products() {
         },
         {
           model: 'LactoSure ECO-D-V4',
-          image: '/images/lactosure-eco-d-v4.jpg',
+          image: '/images/LactoSure-Eco-D-V4.jpg',
           description: 'Premium display model with 4-parameter upgrade',
           specs: {
             'Parameters': '8 + (Fat, SNF, CLR, Protein, Lactose, Added Water, Salt, Temperature)',
@@ -99,7 +99,7 @@ export default function Products() {
         },
         {
           model: 'LactoSure ECO-CP',
-          image: '/images/lactosure-eco-cp.jpg',
+          image: '/images/ekomilk-ultra-milk-analyzer-1000x1000-1.jpg',
           description: 'Computer-connected analyzer for data logging',
           specs: {
             'Connectivity': 'USB/Serial to PC',
@@ -116,7 +116,7 @@ export default function Products() {
         },
         {
           model: 'LactoSure ECO-SV-V4',
-          image: '/images/lactosure-eco-sv-v4.jpg',
+          image: '/images/lactosure-eco-analyzer-500x500.jpg',
           description: 'Premium solar model with advanced parameters',
           specs: {
             'Power': 'Solar + Battery + AC Adapter',
@@ -133,7 +133,7 @@ export default function Products() {
         },
         {
           model: 'LactoSure ECO-Mastitis',
-          image: '/images/lactosure-eco-mastitis.jpg',
+          image: '/images/ekomilk-ultra-milk-analyzer-1000x1000-1.jpg',
           description: 'Specialized mastitis detection analyzer',
           specs: {
             'Specialty': 'Mastitis detection via conductivity',
@@ -158,7 +158,7 @@ export default function Products() {
       products: [
         {
           model: 'DPU Standard',
-          image: '/images/dpu-standard.jpg',
+          image: '/images/data-processor-for-milk-collection.jpg',
           description: 'Basic data processing unit for small centers',
           specs: {
             'Connectivity': '4 analyzer ports',
@@ -175,7 +175,7 @@ export default function Products() {
         },
         {
           model: 'DPU Advanced',
-          image: '/images/dpu-advanced.jpg',
+          image: '/images/dpu-based-milk-collection-unit.jpg',
           description: 'Advanced system with 8 analyzer ports',
           specs: {
             'Ports': '8 analyzer connections',
@@ -192,7 +192,7 @@ export default function Products() {
         },
         {
           model: 'DPU Enterprise',
-          image: '/images/dpu-enterprise.jpg',
+          image: '/images/milk-data-processing-unit-2223219944-byzgmowa.jpg',
           description: 'Enterprise solution for large dairy plants',
           specs: {
             'Ports': '16 analyzer connections',
@@ -217,7 +217,7 @@ export default function Products() {
       products: [
         {
           model: 'Single Cluster Milking Machine',
-          image: '/images/single-cluster-milking.jpg',
+          image: '',
           description: 'Standard single unit milking for small farms',
           specs: {
             'Type': 'Single Cluster',
@@ -234,7 +234,7 @@ export default function Products() {
         },
         {
           model: 'Double Cluster Milking Machine',
-          image: '/images/double-cluster-milking.jpg',
+          image: '',
           description: 'Twin extraction for increased efficiency',
           specs: {
             'Type': 'Double Cluster',
@@ -251,7 +251,7 @@ export default function Products() {
         },
         {
           model: 'Single Bucket Milking Machine (Oil Type)',
-          image: '/images/bucket-milking-oil.jpg',
+          image: '',
           description: 'Portable bucket-style milking unit',
           specs: {
             'Type': 'Oil-Lubricated',
@@ -276,7 +276,7 @@ export default function Products() {
       products: [
         {
           model: 'Ultrasonic Stirrer (Vibro)',
-          image: '/images/ultrasonic-stirrer.jpg',
+          image: '/images/ultrasonic-milk-stirrer (1).jpeg',
           description: 'Vibration-based milk sample mixing',
           specs: {
             'Technology': 'Ultrasonic vibration',
@@ -293,7 +293,7 @@ export default function Products() {
         },
         {
           model: 'Manual Stirrer',
-          image: '/images/manual-stirrer.jpg',
+          image: '/images/ultrasonic-milk-stirrer (2).jpeg',
           description: 'Hand-operated sample mixing tool',
           specs: {
             'Type': 'Manual/Mechanical',
@@ -318,7 +318,7 @@ export default function Products() {
       products: [
         {
           model: '7 inch Color Display',
-          image: '/images/display-7inch.jpg',
+          image: '',
           description: 'High-visibility color monitor for analyzers',
           specs: {
             'Screen Size': '7 inches',
@@ -335,7 +335,7 @@ export default function Products() {
         },
         {
           model: '10 inch HD Display',
-          image: '/images/display-10inch.jpg',
+          image: '',
           description: 'Large HD monitor for clear visibility',
           specs: {
             'Screen Size': '10 inches',
@@ -360,7 +360,7 @@ export default function Products() {
       products: [
         {
           model: 'Thermal Printer (58mm)',
-          image: '/images/thermal-printer.jpg',
+          image: '',
           description: 'Fast receipt-style thermal printer',
           specs: {
             'Type': 'Thermal',
@@ -377,7 +377,7 @@ export default function Products() {
         },
         {
           model: 'A4 Thermal Printer',
-          image: '/images/a4-printer.jpg',
+          image: '',
           description: 'Full-size A4 report printer',
           specs: {
             'Paper Size': 'A4',
@@ -402,7 +402,7 @@ export default function Products() {
       products: [
         {
           model: 'DPU-Based Auto Collection',
-          image: '/images/auto-collection-dpu.jpg',
+          image: '/images/dpu-based-milk-collection-unit.jpg',
           description: 'Fully automated collection with DPU integration',
           specs: {
             'Integration': 'DPU-based system',
@@ -419,7 +419,7 @@ export default function Products() {
         },
         {
           model: 'Portable Hand-Held Unit',
-          image: '/images/handheld-collection.jpg',
+          image: '',
           description: 'Field-ready portable collection device',
           specs: {
             'Type': 'Mobile device',
@@ -444,7 +444,7 @@ export default function Products() {
       products: [
         {
           model: 'Daily Cleaning Solution',
-          image: '/images/cleaning-solution.jpg',
+          image: '',
           description: 'Food-grade analyzer cleaning solution',
           specs: {
             'Type': 'Biodegradable',
@@ -461,7 +461,7 @@ export default function Products() {
         },
         {
           model: 'Calibration Liquid',
-          image: '/images/calibration-liquid.jpg',
+          image: '',
           description: 'Reference standard for analyzer calibration',
           specs: {
             'Type': 'Certified reference standard',
@@ -631,7 +631,7 @@ export default function Products() {
                     </div>
                     <div className="mt-6 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-4">
                       <a
-                        href="https://wa.me/918111007798?text=I%20am%20interested%20in%20the%20product:%20" + encodeURIComponent(product.model)
+                        href={"https://wa.me/918111007798?text=I%20am%20interested%20in%20the%20product:%20" + encodeURIComponent(product.model)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all flex items-center justify-center gap-2"
