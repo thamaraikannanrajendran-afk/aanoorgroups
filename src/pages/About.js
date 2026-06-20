@@ -1,114 +1,141 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Award } from 'lucide-react';
+import { MapPin, Phone, Mail, Award, Sparkles } from 'lucide-react';
 
 export default function About() {
+  const values = [
+    { icon: '🏆', title: 'Excellence', desc: 'Highest quality standards' },
+    { icon: '🤝', title: 'Trust', desc: 'Built on honest relationships' },
+    { icon: '⚡', title: 'Innovation', desc: 'Cutting-edge solutions' }
+  ];
+
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-dark to-primary-navy text-white py-16 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">About Aanoor Enterprises</h1>
-          <p className="text-xl text-accent-gold">Reliable. Trusted. Together.</p>
+    <div className="overflow-hidden bg-slate-950">
+      {/* HERO */}
+      <section className="relative py-20 px-4">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900"></div>
+        <div className="absolute top-10 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="relative max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-black text-white mb-4">Aanoor Enterprises</h1>
+          <p className="text-2xl text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text font-bold">Reliable. Trusted. Together.</p>
         </div>
       </section>
 
-      {/* Company Info */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* ABOUT CONTENT */}
+      <section className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-dark mb-6">About Us</h2>
-              <p className="text-gray-600 mb-4 text-lg">
-                Aanoor Enterprises is a trusted provider of premium dairy equipment and professional services. We are committed to delivering quality products and exceptional customer support.
-              </p>
-              <p className="text-gray-600 mb-4 text-lg">
-                Our team of experts understands the dairy industry and works closely with farmers and businesses to provide tailored solutions that meet their specific needs.
-              </p>
-              <p className="text-gray-600 text-lg">
-                With our headquarters in Kothamangalam, Namakkal, we serve customers across Erode and Namakkal with dedication and professionalism.
-              </p>
+              <h2 className="text-4xl font-black text-white mb-6">About Us</h2>
+              <div className="space-y-4 text-slate-300 text-lg leading-relaxed">
+                <p>
+                  Aanoor Enterprises is your trusted partner for premium dairy equipment solutions. We specialize in providing high-quality RO systems, milk testing equipment, and professional support services.
+                </p>
+                <p>
+                  With headquarters in Kothamangalam, Namakkal, we've committed ourselves to delivering excellence across Erode and Namakkal regions.
+                </p>
+                <p>
+                  Our team of experts understands the dairy industry intimately and works closely with partners to provide tailored solutions.
+                </p>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-primary-dark to-primary-navy p-8 rounded-lg text-white">
-              <h3 className="text-2xl font-bold text-accent-gold mb-6">Our Mission</h3>
-              <p className="mb-6">To provide reliable, high-quality dairy equipment and services that empower farmers and businesses to succeed.</p>
-              <h3 className="text-2xl font-bold text-accent-gold mb-6">Our Vision</h3>
-              <p>To be the trusted partner for dairy equipment solutions across the region, known for quality, reliability, and customer satisfaction.</p>
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 rounded-2xl p-8">
+              <h3 className="text-2xl font-black text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text mb-6">Mission</h3>
+              <p className="text-slate-300 mb-8 text-lg">
+                To provide reliable, high-quality dairy equipment and services that empower farmers and businesses to succeed.
+              </p>
+              <h3 className="text-2xl font-black text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text mb-6">Vision</h3>
+              <p className="text-slate-300 text-lg">
+                To be the trusted leader in dairy equipment solutions, known for quality, reliability, and customer satisfaction.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Proprietor Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-primary-dark mb-12">Leadership</h2>
-          <div className="bg-gradient-to-r from-primary-dark to-primary-navy text-white p-8 rounded-lg text-center">
-            <h3 className="text-2xl font-bold mb-2">R. Gopinath</h3>
-            <p className="text-accent-gold text-lg font-semibold mb-4">Proprietor & Founder</p>
-            <p className="text-gray-300">
-              Leading Aanoor Enterprises with a vision to provide quality dairy equipment solutions to the region. With dedication and expertise, building trust with every customer.
+      {/* PROPRIETOR */}
+      <section className="py-24 px-4 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-black text-white mb-12">Leadership</h2>
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 rounded-2xl p-12 hover:border-cyan-500/30 transition-all duration-300">
+            <div className="w-24 h-24 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-cyan-500/30">
+              <Award className="w-12 h-12 text-white" />
+            </div>
+            <h3 className="text-3xl font-black text-white mb-2">R. Gopinath</h3>
+            <p className="text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text font-bold text-xl mb-6">Proprietor & Founder</p>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              Leading Aanoor Enterprises with a vision to provide quality dairy equipment solutions. With dedication and expertise, building trust with every customer and driving innovation in the dairy sector.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* VALUES */}
+      <section className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-primary-dark mb-12">Our Values</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-white mb-4">Our Values</h2>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: '🎯', title: 'Reliability', desc: 'Dependable service and quality products' },
-              { icon: '🤝', title: 'Trust', desc: 'Built on honest relationships and transparency' },
-              { icon: '💪', title: 'Excellence', desc: 'Committed to highest standards' }
-            ].map((value, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-lg shadow-md text-center">
-                <div className="text-5xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-bold text-primary-dark mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.desc}</p>
+            {values.map((value, idx) => (
+              <div
+                key={idx}
+                className="bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 rounded-2xl p-8 text-center hover:border-cyan-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 group"
+              >
+                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{value.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
+                <p className="text-slate-400">{value.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Info */}
-      <section className="py-16 px-4 bg-primary-dark text-white">
+      {/* CONTACT */}
+      <section className="py-24 px-4 bg-gradient-to-b from-slate-900 to-slate-950">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Get In Touch</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <Phone className="text-accent-gold mx-auto mb-4" size={40} />
-              <h3 className="text-lg font-bold mb-2">Phone</h3>
-              <a href="tel:+918111007798" className="text-gray-300 hover:text-accent-gold transition-colors">
-                +91 81110 07798
-              </a>
-            </div>
-            <div className="text-center">
-              <Mail className="text-accent-gold mx-auto mb-4" size={40} />
-              <h3 className="text-lg font-bold mb-2">Email</h3>
-              <a href="mailto:aanoorenrerprises.kot@gmail.com" className="text-gray-300 hover:text-accent-gold transition-colors break-all">
-                aanoorenrerprises.kot@gmail.com
-              </a>
-            </div>
-            <div className="text-center">
-              <MapPin className="text-accent-gold mx-auto mb-4" size={40} />
-              <h3 className="text-lg font-bold mb-2">Location</h3>
-              <p className="text-gray-300 text-sm">
-                3/390, Adukkunagar, Kothamangalam (Po), P.Velur (Tk), Namakkal (Dt) - 637213
-              </p>
-            </div>
+          <h2 className="text-4xl font-black text-white text-center mb-16">Get In Touch</h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+            <a
+              href="tel:+918111007798"
+              className="group bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 group-hover:border-cyan-500/30 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 text-white shadow-lg shadow-cyan-500/30">
+                <Phone className="w-7 h-7" />
+              </div>
+              <h3 className="font-bold text-white mb-3">Phone</h3>
+              <p className="text-slate-300 hover:text-cyan-400 transition-colors">+91 81110 07798</p>
+            </a>
+
+            <a
+              href="mailto:aanoorenrerprises.kot@gmail.com"
+              className="group bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 group-hover:border-cyan-500/30 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 text-white shadow-lg shadow-cyan-500/30">
+                <Mail className="w-7 h-7" />
+              </div>
+              <h3 className="font-bold text-white mb-3">Email</h3>
+              <p className="text-slate-300 text-sm hover:text-cyan-400 transition-colors">aanoorenrerprises.kot@gmail.com</p>
+            </a>
+
+            <a
+              href="#"
+              className="group bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 group-hover:border-cyan-500/30 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 text-white shadow-lg shadow-cyan-500/30">
+                <MapPin className="w-7 h-7" />
+              </div>
+              <h3 className="font-bold text-white mb-3">Location</h3>
+              <p className="text-slate-300 text-sm">Kothamangalam, Namakkal, TN</p>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* GST Info */}
-      <section className="py-8 px-4 bg-gray-100">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-600 text-sm">
-            <strong>GSTIN:</strong> 33CVGPG8716C1ZU
-          </p>
-        </div>
+      {/* GST */}
+      <section className="py-8 px-4 bg-slate-900 border-t border-white/10 text-center">
+        <p className="text-slate-400 text-sm">
+          <span className="font-bold text-white">GSTIN:</span> 33CVGPG8716C1ZU
+        </p>
       </section>
     </div>
   );

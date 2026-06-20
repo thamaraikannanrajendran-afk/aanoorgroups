@@ -1,122 +1,149 @@
 import React from 'react';
-import { Wrench, Clock, Users, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Wrench, Clock, Users, Shield, CheckCircle, ArrowRight, Phone } from 'lucide-react';
 
 export default function Services() {
   const services = [
     {
-      id: 1,
-      icon: <Wrench className="text-accent-gold" size={40} />,
+      icon: Wrench,
       title: 'Installation & Setup',
-      description: 'Professional installation and configuration of all dairy equipment',
+      description: 'Professional installation and configuration',
       features: ['Expert technicians', 'Quick setup', 'Testing included', 'Documentation']
     },
     {
-      id: 2,
-      icon: <Clock className="text-accent-gold" size={40} />,
+      icon: Clock,
       title: 'Maintenance & Support',
-      description: 'Regular maintenance and preventive care for optimal performance',
+      description: 'Regular maintenance and preventive care',
       features: ['Annual contracts', 'Regular check-ups', 'Priority support', 'Spare parts']
     },
     {
-      id: 3,
-      icon: <Users className="text-accent-gold" size={40} />,
+      icon: Users,
       title: 'Training & Consultation',
-      description: 'Comprehensive training and expert consultation for your team',
+      description: 'Comprehensive training for your team',
       features: ['Operator training', 'Usage guidelines', 'Best practices', 'Support hotline']
     },
     {
-      id: 4,
-      icon: <Shield className="text-accent-gold" size={40} />,
+      icon: Shield,
       title: 'Repair & Troubleshooting',
-      description: 'Quick response repair services and technical troubleshooting',
+      description: 'Quick response repair services',
       features: ['24/7 support', 'Fast response', 'Expert diagnosis', 'Quality parts']
     }
   ];
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-dark to-primary-navy text-white py-16 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">Our Services</h1>
-          <p className="text-xl text-accent-gold">Complete Support & Maintenance Solutions</p>
+    <div className="overflow-hidden bg-slate-950">
+      {/* HERO */}
+      <section className="relative py-20 px-4">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+        <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="relative max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-black text-white mb-4">Our Services</h1>
+          <p className="text-xl text-slate-300">Complete Support & Maintenance Solutions</p>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* SERVICES GRID */}
+      <section className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {services.map((service) => (
-              <div key={service.id} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <div className="flex items-start gap-4 mb-4">
-                  <div>{service.icon}</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-primary-dark">{service.title}</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {services.map((Service, idx) => {
+              const Icon = Service.icon;
+              return (
+                <div
+                  key={idx}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                  <div className="relative bg-slate-900/60 backdrop-blur-xl border border-white/10 group-hover:border-purple-500/30 rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10">
+                    <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 text-white group-hover:shadow-2xl group-hover:shadow-purple-500/50">
+                      <Icon className="w-7 h-7" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
+                      {Service.title}
+                    </h3>
+                    <p className="text-slate-400 mb-6">{Service.description}</p>
+                    <ul className="space-y-3">
+                      {Service.features.map((feature, i) => (
+                        <li key={i} className="flex items-center gap-3 text-slate-300">
+                          <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-gray-700">
-                      <span className="text-accent-gold font-bold">✓</span> {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Service Process */}
-      <section className="py-16 px-4 bg-white">
+      {/* PROCESS */}
+      <section className="py-24 px-4 bg-gradient-to-b from-slate-900 to-slate-950">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Service Process</h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-black text-white mb-4">Our Process</h2>
+            <p className="text-xl text-slate-400">Simple and efficient service delivery</p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-4 md:gap-0">
             {[
-              { step: '1', title: 'Contact Us', desc: 'Reach out via phone or WhatsApp' },
-              { step: '2', title: 'Assessment', desc: 'We evaluate your needs' },
-              { step: '3', title: 'Service', desc: 'Professional service delivery' },
-              { step: '4', title: 'Follow-up', desc: 'Ongoing support & maintenance' }
+              { step: '1', title: 'Contact', desc: 'Reach out to us' },
+              { step: '2', title: 'Assessment', desc: 'We evaluate needs' },
+              { step: '3', title: 'Delivery', desc: 'Professional service' },
+              { step: '4', title: 'Support', desc: 'Ongoing assistance' }
             ].map((item, idx) => (
-              <div key={idx} className="text-center">
-                <div className="bg-primary-dark text-white text-4xl font-bold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  {item.step}
+              <div key={idx} className="relative">
+                <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 rounded-2xl p-6 text-center hover:border-purple-500/30 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-400 text-white text-2xl font-black rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-500/30">
+                    {item.step}
+                  </div>
+                  <h3 className="font-bold text-lg text-white mb-2">{item.title}</h3>
+                  <p className="text-slate-400 text-sm">{item.desc}</p>
                 </div>
-                <h3 className="font-bold text-lg text-primary-dark mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                {idx < 3 && (
+                  <div className="hidden md:block absolute -right-8 top-1/2 transform -translate-y-1/2">
+                    <ArrowRight className="w-6 h-6 text-slate-600" />
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="py-16 px-4 bg-primary-dark text-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Service Coverage Areas</h2>
-          <p className="text-lg text-gray-300 mb-8">We provide professional services in these regions</p>
+      {/* SERVICE AREAS */}
+      <section className="py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-black text-white mb-4">Coverage Areas</h2>
+            <p className="text-xl text-slate-400">Professional service coverage</p>
+          </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            <div className="bg-primary-navy p-8 rounded-lg">
-              <h3 className="text-2xl font-bold text-accent-gold mb-4">Erode</h3>
-              <p className="text-gray-300">Fast response & comprehensive coverage</p>
-            </div>
-            <div className="bg-primary-navy p-8 rounded-lg">
-              <h3 className="text-2xl font-bold text-accent-gold mb-4">Namakkal</h3>
-              <p className="text-gray-300">Dedicated support & installation team</p>
-            </div>
+            {['Erode', 'Namakkal'].map((area) => (
+              <div
+                key={area}
+                className="bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 rounded-2xl p-8 text-center hover:border-purple-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10"
+              >
+                <div className="text-5xl mb-4">📍</div>
+                <h3 className="text-2xl font-bold text-white mb-2">{area}</h3>
+                <p className="text-slate-400">Rapid response & quality service</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 bg-accent-gold text-primary-dark">
+      <section className="py-24 px-4 bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Need Professional Service?</h2>
-          <p className="text-lg mb-8">Request a service visit or consultation today</p>
-          <Link to="/contact" className="inline-block bg-primary-dark text-white hover:bg-primary-navy font-bold py-3 px-8 rounded-lg transition-colors">
+          <h2 className="text-5xl font-black text-white mb-6">Need Professional Service?</h2>
+          <p className="text-xl text-slate-300 mb-8">Get in touch with our expert team today</p>
+          <Link
+            to="/contact"
+            className="inline-flex px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 gap-2"
+          >
+            <Phone className="w-5 h-5" />
             Request Service
           </Link>
         </div>

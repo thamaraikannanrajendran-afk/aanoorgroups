@@ -1,163 +1,152 @@
 import React, { useState } from 'react';
-import { Phone } from 'lucide-react';
+import { ChevronDown, MessageCircle } from 'lucide-react';
 
 export default function Products() {
-  const [selectedCategory, setSelectedCategory] = useState('ro');
+  const [activeCategory, setActiveCategory] = useState('ro');
 
-  const productsData = {
+  const products = {
     ro: [
       {
-        id: 1,
-        name: 'Premium Home RO System',
-        specs: ['8 Stage Purification', '25 LPH Capacity', 'Auto Shutdown', 'TDS Controller'],
-        image: '💧'
+        name: 'Premium Home RO',
+        specs: ['8-Stage Purification', '25 LPH Capacity', 'TDS Controller', 'Auto Shutdown'],
+        price: 'Request Quote',
+        badge: 'Popular'
       },
       {
-        id: 2,
         name: 'Commercial RO Plant',
-        specs: ['Advanced Filtration', '50 LPH Capacity', 'Digital Display', 'Warranty Support'],
-        image: '💧'
+        specs: ['Advanced Filtration', '50 LPH Capacity', 'Digital Display', 'Warranty'],
+        price: 'Request Quote',
+        badge: 'Featured'
       },
       {
-        id: 3,
         name: 'Industrial RO System',
-        specs: ['Heavy Duty Design', '100+ LPH', 'Real-time Monitoring', 'Expert Installation'],
-        image: '💧'
+        specs: ['Heavy Duty', '100+ LPH', 'Real-time Monitoring', 'Expert Support'],
+        price: 'Request Quote',
+        badge: 'Premium'
       }
     ],
     milk: [
       {
-        id: 4,
         name: 'Digital Milk Analyzer',
-        specs: ['Fat Content Analysis', 'Protein Detection', 'Quick Results', 'Portable Design'],
-        image: '🥛'
+        specs: ['Fat Analysis', 'Protein Detection', 'Quick Results', 'Portable'],
+        price: 'Request Quote',
+        badge: 'Best Seller'
       },
       {
-        id: 5,
         name: 'Automatic Weighing Scale',
-        specs: ['Digital Display', 'High Precision', 'Easy Operation', 'Durable Build'],
-        image: '⚖️'
+        specs: ['Digital Display', 'High Precision', 'Easy Operation', 'Durable'],
+        price: 'Request Quote',
+        badge: null
       },
       {
-        id: 6,
         name: 'Data Processing Unit',
         specs: ['Real-time Tracking', 'Cloud Integration', 'Report Generation', 'User Friendly'],
-        image: '💻'
+        price: 'Request Quote',
+        badge: null
       }
     ],
     chemicals: [
       {
-        id: 7,
         name: 'Cleaning Solution',
-        specs: ['Food Grade', 'Effective Sanitization', 'Cost Effective', 'Bulk Available'],
-        image: '⚗️'
+        specs: ['Food Grade', 'Effective', 'Cost Effective', 'Bulk Available'],
+        price: 'Request Quote',
+        badge: null
       },
       {
-        id: 8,
         name: 'Water Treatment Chemical',
         specs: ['Quality Assured', 'ISO Certified', 'Long Shelf Life', 'Easy Storage'],
-        image: '🧪'
+        price: 'Request Quote',
+        badge: null
       },
       {
-        id: 9,
         name: 'Maintenance Kit',
-        specs: ['All Components Included', 'Original Parts', 'Installation Guide', 'Support'],
-        image: '🔧'
+        specs: ['All Components', 'Original Parts', 'Installation Guide', '24/7 Support'],
+        price: 'Request Quote',
+        badge: 'Complete Solution'
       }
     ]
   };
 
-  const currentProducts = productsData[selectedCategory];
+  const categories = [
+    { id: 'ro', name: '💧 RO Machines', color: 'from-blue-500 to-cyan-400' },
+    { id: 'milk', name: '🥛 Milk Equipment', color: 'from-amber-500 to-orange-400' },
+    { id: 'chemicals', name: '🧪 Chemicals', color: 'from-purple-500 to-pink-400' }
+  ];
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-dark to-primary-navy text-white py-16 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">Our Products</h1>
-          <p className="text-xl text-accent-gold">Premium Quality Equipment & Solutions</p>
+    <div className="overflow-hidden bg-slate-950">
+      {/* HERO */}
+      <section className="relative py-20 px-4">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900"></div>
+        <div className="absolute top-10 right-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="relative max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-black text-white mb-4">Our Products</h1>
+          <p className="text-xl text-slate-300">Premium Quality Solutions for Dairy Success</p>
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="py-8 px-4 bg-white">
+      {/* CATEGORY FILTER */}
+      <section className="py-8 px-4 bg-slate-900/50 backdrop-blur-xl sticky top-20 z-40">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap gap-4 justify-center">
-            <button
-              onClick={() => setSelectedCategory('ro')}
-              className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
-                selectedCategory === 'ro'
-                  ? 'bg-primary-dark text-white'
-                  : 'bg-gray-200 text-primary-dark hover:bg-gray-300'
-              }`}
-            >
-              RO Machines
-            </button>
-            <button
-              onClick={() => setSelectedCategory('milk')}
-              className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
-                selectedCategory === 'milk'
-                  ? 'bg-primary-dark text-white'
-                  : 'bg-gray-200 text-primary-dark hover:bg-gray-300'
-              }`}
-            >
-              Milk Machines
-            </button>
-            <button
-              onClick={() => setSelectedCategory('chemicals')}
-              className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
-                selectedCategory === 'chemicals'
-                  ? 'bg-primary-dark text-white'
-                  : 'bg-gray-200 text-primary-dark hover:bg-gray-300'
-              }`}
-            >
-              Chemicals & Consumables
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Products Grid */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-            {currentProducts.map((product) => (
-              <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="bg-gradient-to-r from-primary-dark to-primary-navy p-8 text-center text-5xl">
-                  {product.image}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-primary-dark mb-4">{product.name}</h3>
-                  <ul className="space-y-2 mb-6">
-                    {product.specs.map((spec, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-gray-600">
-                        <span className="text-accent-gold">✓</span> {spec}
-                      </li>
-                    ))}
-                  </ul>
-                  <button className="w-full bg-primary-dark text-white hover:bg-primary-navy font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-2">
-                    <Phone size={18} /> Request Quote
-                  </button>
-                </div>
-              </div>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`px-6 py-3 rounded-xl font-bold transition-all duration-300 ${
+                  activeCategory === cat.id
+                    ? `bg-gradient-to-r ${cat.color} text-white shadow-xl`
+                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700 border border-white/10'
+                }`}
+              >
+                {cat.name}
+              </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-accent-gold text-primary-dark py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Don't See What You're Looking For?</h2>
-          <p className="text-lg mb-8">Contact us for custom solutions and special orders</p>
-          <a
-            href="https://wa.me/918111007798"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-primary-dark text-white hover:bg-primary-navy font-bold py-3 px-8 rounded-lg transition-colors"
-          >
-            Chat on WhatsApp
-          </a>
+      {/* PRODUCTS GRID */}
+      <section className="py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
+            {products[activeCategory].map((product, idx) => (
+              <div
+                key={idx}
+                className="group relative h-full"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                <div className="relative bg-slate-900/60 backdrop-blur-xl border border-white/10 group-hover:border-cyan-500/30 rounded-2xl p-8 h-full flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10">
+                  {product.badge && (
+                    <div className="absolute -top-3 right-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold">
+                      {product.badge}
+                    </div>
+                  )}
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300">
+                    {product.name}
+                  </h3>
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {product.specs.map((spec, i) => (
+                      <li key={i} className="flex items-center gap-3 text-slate-300">
+                        <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
+                        {spec}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="space-y-3">
+                    <p className="text-slate-400 text-sm">Pricing</p>
+                    <p className="text-2xl font-black bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                      {product.price}
+                    </p>
+                    <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 group/btn">
+                      <MessageCircle className="w-5 h-5" />
+                      Request Quote
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
