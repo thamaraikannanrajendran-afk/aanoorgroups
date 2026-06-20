@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star } from 'lucide-react';
+import { Star, Send } from 'lucide-react';
 
 export default function Feedback() {
   const [formData, setFormData] = useState({
@@ -30,81 +30,83 @@ export default function Feedback() {
   };
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-dark to-primary-navy text-white py-16 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">Customer Feedback</h1>
-          <p className="text-xl text-accent-gold">Share Your Experience With Us</p>
+    <div className="overflow-hidden bg-slate-950">
+      {/* HERO */}
+      <section className="relative py-20 px-4">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-amber-900 to-slate-900"></div>
+        <div className="absolute top-10 right-10 w-72 h-72 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="relative max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-black text-white mb-4">Customer Feedback</h1>
+          <p className="text-xl text-slate-300">Share your experience with us</p>
         </div>
       </section>
 
-      {/* Feedback Form */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold text-primary-dark mb-2">We Value Your Feedback</h2>
-            <p className="text-gray-600 mb-8">Help us improve by sharing your experience with our products and services</p>
+      {/* FEEDBACK FORM */}
+      <section className="py-24 px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 rounded-2xl p-8">
+            <h2 className="text-3xl font-black text-white mb-2">We Value Your Feedback</h2>
+            <p className="text-slate-400 mb-8">Help us improve by sharing your experience with our products and services</p>
 
             {submitted ? (
-              <div className="bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-lg text-center">
-                <p className="font-bold text-lg mb-2">Thank You!</p>
-                <p>Your feedback has been received. We appreciate your time!</p>
+              <div className="bg-green-500/20 border border-green-500/50 text-green-300 px-8 py-6 rounded-xl text-center">
+                <p className="font-bold text-lg mb-2">✓ Thank You!</p>
+                <p>Your feedback has been received and will help us improve</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-700 font-semibold mb-2">Name</label>
+                    <label className="block text-slate-300 font-semibold mb-2">Name *</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-accent-gold"
-                      placeholder="Your Name"
+                      className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors"
+                      placeholder="Your name"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-semibold mb-2">Phone</label>
+                    <label className="block text-slate-300 font-semibold mb-2">Phone</label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-accent-gold"
-                      placeholder="+91 XXXXX XXXXX"
+                      className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors"
+                      placeholder="+91 XXXXX"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Email</label>
+                  <label className="block text-slate-300 font-semibold mb-2">Email</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-accent-gold"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-4">Rating</label>
-                  <div className="flex gap-2">
+                  <label className="block text-slate-300 font-semibold mb-4">Rate Your Experience *</label>
+                  <div className="flex gap-3">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <button
                         key={star}
                         type="button"
                         onClick={() => setFormData(prev => ({ ...prev, rating: star }))}
-                        className="transition-transform hover:scale-110"
+                        className="transition-all duration-300 hover:scale-125"
                       >
                         <Star
-                          size={32}
-                          className={formData.rating >= star ? 'fill-accent-gold text-accent-gold' : 'text-gray-300'}
+                          size={40}
+                          className={formData.rating >= star ? 'fill-amber-400 text-amber-400' : 'text-slate-600'}
                         />
                       </button>
                     ))}
@@ -112,22 +114,23 @@ export default function Feedback() {
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Your Feedback</label>
+                  <label className="block text-slate-300 font-semibold mb-2">Your Feedback *</label>
                   <textarea
                     name="feedback"
                     value={formData.feedback}
                     onChange={handleChange}
                     required
                     rows="6"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-accent-gold"
-                    placeholder="Share your experience, suggestions, or any feedback..."
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors resize-none"
+                    placeholder="Share your experience, suggestions, or feedback..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-primary-dark text-white hover:bg-primary-navy font-bold py-3 rounded-lg transition-colors"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
                 >
+                  <Send className="w-5 h-5" />
                   Submit Feedback
                 </button>
               </form>
@@ -136,24 +139,30 @@ export default function Feedback() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-16 px-4 bg-white">
+      {/* TESTIMONIALS */}
+      <section className="py-24 px-4 bg-gradient-to-b from-slate-900 to-slate-950">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-primary-dark mb-12">Customer Testimonials</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-white mb-4">Customer Testimonials</h2>
+            <p className="text-xl text-slate-400">Real feedback from satisfied customers</p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: 'Farmer X', text: 'Excellent products and great customer service!', rating: 5 },
-              { name: 'Dairy Owner', text: 'Reliable equipment and fast installation.', rating: 5 },
-              { name: 'Business Y', text: 'Professional team with quality support.', rating: 5 }
+              { name: 'Farmer Ravi', text: 'Excellent products and outstanding customer service!', rating: 5 },
+              { name: 'Dairy Owner', text: 'Reliable equipment with professional installation and support.', rating: 5 },
+              { name: 'Cooperative Society', text: 'Best quality solutions we could find in the market today.', rating: 5 }
             ].map((testimonial, idx) => (
-              <div key={idx} className="bg-gray-50 p-6 rounded-lg shadow-md">
+              <div
+                key={idx}
+                className="bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 rounded-2xl p-6 hover:border-amber-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/10"
+              >
                 <div className="flex gap-1 mb-4">
                   {Array(testimonial.rating).fill(0).map((_, i) => (
-                    <Star key={i} size={18} className="fill-accent-gold text-accent-gold" />
+                    <Star key={i} size={20} className="fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
-                <p className="font-bold text-primary-dark">- {testimonial.name}</p>
+                <p className="text-slate-300 mb-4 italic leading-relaxed">"{testimonial.text}"</p>
+                <p className="font-bold text-white">- {testimonial.name}</p>
               </div>
             ))}
           </div>

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Send } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    message: '',
-    serviceType: 'inquiry'
+    subject: 'Product Inquiry',
+    message: ''
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -21,188 +21,211 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In real implementation, send to backend
     console.log('Form submitted:', formData);
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', phone: '', email: '', message: '', serviceType: 'inquiry' });
+      setFormData({ name: '', phone: '', email: '', subject: 'Product Inquiry', message: '' });
     }, 3000);
   };
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-dark to-primary-navy text-white py-16 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl text-accent-gold">We're here to help</p>
+    <div className="overflow-hidden bg-slate-950">
+      {/* HERO */}
+      <section className="relative py-20 px-4">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+        <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="relative max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-black text-white mb-4">Contact Us</h1>
+          <p className="text-xl text-slate-300">We're here to help with your dairy equipment needs</p>
         </div>
       </section>
 
-      {/* Contact Info & Form */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* CONTACT CONTENT */}
+      <section className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Information */}
+            {/* INFO */}
             <div>
-              <h2 className="text-3xl font-bold text-primary-dark mb-8">Get In Touch</h2>
+              <h2 className="text-4xl font-black text-white mb-8">Get In Touch</h2>
               
-              <div className="space-y-8">
-                <div className="flex gap-4">
-                  <Phone className="text-accent-gold flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h3 className="font-bold text-primary-dark mb-2">Phone</h3>
-                    <a href="tel:+918111007798" className="text-gray-600 hover:text-primary-dark transition-colors">
-                      +91 81110 07798
-                    </a>
+              <div className="space-y-6">
+                <a
+                  href="tel:+918111007798"
+                  className="group flex gap-4 p-6 bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 group-hover:border-purple-500/30 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10"
+                >
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-400 rounded-xl flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/30">
+                    <Phone className="w-6 h-6" />
                   </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <Mail className="text-accent-gold flex-shrink-0 mt-1" size={24} />
                   <div>
-                    <h3 className="font-bold text-primary-dark mb-2">Email</h3>
-                    <a href="mailto:aanoorenrerprises.kot@gmail.com" className="text-gray-600 hover:text-primary-dark transition-colors break-all">
-                      aanoorenrerprises.kot@gmail.com
-                    </a>
+                    <h3 className="font-bold text-white mb-1">Phone</h3>
+                    <p className="text-slate-300 group-hover:text-purple-400 transition-colors">+91 81110 07798</p>
+                    <p className="text-sm text-slate-500 mt-1">Call us anytime</p>
                   </div>
-                </div>
+                </a>
 
-                <div className="flex gap-4">
-                  <MapPin className="text-accent-gold flex-shrink-0 mt-1" size={24} />
+                <a
+                  href="mailto:aanoorenrerprises.kot@gmail.com"
+                  className="group flex gap-4 p-6 bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 group-hover:border-purple-500/30 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10"
+                >
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-400 rounded-xl flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/30">
+                    <Mail className="w-6 h-6" />
+                  </div>
                   <div>
-                    <h3 className="font-bold text-primary-dark mb-2">Location</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-bold text-white mb-1">Email</h3>
+                    <p className="text-slate-300 group-hover:text-purple-400 transition-colors text-sm break-all">aanoorenrerprises.kot@gmail.com</p>
+                    <p className="text-sm text-slate-500 mt-1">Response within 24 hours</p>
+                  </div>
+                </a>
+
+                <div className="flex gap-4 p-6 bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 rounded-2xl">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-400 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-purple-500/30">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white mb-1">Location</h3>
+                    <p className="text-slate-300 text-sm leading-relaxed">
                       3/390, Adukkunagar,<br />
                       Kothamangalam (Po),<br />
                       P.Velur (Tk), Namakkal (Dt)<br />
-                      TN - 637213
+                      Tamil Nadu - 637213
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <MessageCircle className="text-accent-gold flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h3 className="font-bold text-primary-dark mb-2">WhatsApp</h3>
-                    <a href="https://wa.me/918111007798" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary-dark transition-colors">
-                      Click to Chat
-                    </a>
+                <a
+                  href="https://wa.me/918111007798"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex gap-4 p-6 bg-gradient-to-br from-green-600 to-emerald-600 border border-green-500/30 group-hover:border-green-400 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20"
+                >
+                  <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-green-600 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <MessageCircle className="w-6 h-6" />
                   </div>
-                </div>
+                  <div>
+                    <h3 className="font-bold text-white mb-1">WhatsApp</h3>
+                    <p className="text-white group-hover:text-green-100 transition-colors">Quick chat support available</p>
+                    <p className="text-sm text-green-100 mt-1">Instant response</p>
+                  </div>
+                </a>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h2 className="text-2xl font-bold text-primary-dark mb-6">Send us a Message</h2>
-              
-              {submitted ? (
-                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-                  <p className="font-bold">Thank you!</p>
-                  <p>We'll get back to you soon.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2">Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-accent-gold"
-                      placeholder="Your Name"
-                    />
+            {/* FORM */}
+            <div>
+              <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
+                
+                {submitted ? (
+                  <div className="bg-green-500/20 border border-green-500/50 text-green-300 px-6 py-4 rounded-xl text-center">
+                    <p className="font-bold text-lg mb-1">✓ Thank you!</p>
+                    <p>We'll respond within 24 hours</p>
                   </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <label className="block text-slate-300 font-semibold mb-2 text-sm">Name *</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition-colors"
+                        placeholder="Your name"
+                      />
+                    </div>
 
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2">Phone</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-accent-gold"
-                      placeholder="+91 XXXXX XXXXX"
-                    />
-                  </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-slate-300 font-semibold mb-2 text-sm">Phone *</label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition-colors"
+                          placeholder="+91 XXXXX"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-slate-300 font-semibold mb-2 text-sm">Email</label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition-colors"
+                          placeholder="your@email.com"
+                        />
+                      </div>
+                    </div>
 
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-accent-gold"
-                      placeholder="your@email.com"
-                    />
-                  </div>
+                    <div>
+                      <label className="block text-slate-300 font-semibold mb-2 text-sm">Subject</label>
+                      <select
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
+                      >
+                        <option value="Product Inquiry">Product Inquiry</option>
+                        <option value="Service Request">Service Request</option>
+                        <option value="Support">Support</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
 
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2">Service Type</label>
-                    <select
-                      name="serviceType"
-                      value={formData.serviceType}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-accent-gold"
+                    <div>
+                      <label className="block text-slate-300 font-semibold mb-2 text-sm">Message *</label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows="4"
+                        className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition-colors resize-none"
+                        placeholder="Tell us about your needs..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
                     >
-                      <option value="inquiry">Product Inquiry</option>
-                      <option value="service">Service Request</option>
-                      <option value="support">Support</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2">Message</label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows="4"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-accent-gold"
-                      placeholder="Your message..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-primary-dark text-white hover:bg-primary-navy font-bold py-3 rounded-lg transition-colors"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              )}
+                      <Send className="w-5 h-5" />
+                      Send Message
+                    </button>
+                  </form>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Actions */}
-      <section className="py-16 px-4 bg-primary-dark text-white">
+      {/* SERVICE AREAS */}
+      <section className="py-24 px-4 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-white/10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Quick Actions</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-white mb-4">Service Areas</h2>
+            <p className="text-xl text-slate-400">We serve these regions with fast and reliable support</p>
+          </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            <a
-              href="https://wa.me/918111007798"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg text-center transition-colors flex items-center justify-center gap-2"
-            >
-              <MessageCircle size={24} /> WhatsApp Chat
-            </a>
-            <a
-              href="tel:+918111007798"
-              className="bg-accent-gold hover:bg-accent-gold-light text-primary-dark font-bold py-4 px-6 rounded-lg text-center transition-colors flex items-center justify-center gap-2"
-            >
-              <Phone size={24} /> Call Now
-            </a>
+            {[
+              { area: 'Erode', emoji: '🏘️', desc: 'Fast response & professional service' },
+              { area: 'Namakkal', emoji: '🏘️', desc: 'Dedicated support & installation' }
+            ].map((item) => (
+              <div
+                key={item.area}
+                className="bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 rounded-2xl p-8 text-center hover:border-purple-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10"
+              >
+                <div className="text-5xl mb-4">{item.emoji}</div>
+                <h3 className="text-2xl font-bold text-white mb-2">{item.area}</h3>
+                <p className="text-slate-400">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
