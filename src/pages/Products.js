@@ -14,7 +14,7 @@ export default function Products() {
       products: [
         {
           model: 'LactoSure ECO',
-          image: '/images/lactosure-eco-analyzer-500x500.jpg',
+          image: '/images/images (43).jpeg',
           description: 'Basic milk analyzer for small collection centers',
           specs: {
             'Measurement Time': '25-30 seconds',
@@ -31,7 +31,7 @@ export default function Products() {
         },
         {
           model: 'LactoSure ECO-S',
-          image: '/images/lactosure-eco-v3-milk-analyzer-500x500.jpeg',
+          image: '/images/images (42).jpeg',
           description: 'Solar-powered milk analyzer for remote areas',
           specs: {
             'Power Source': 'Solar + Battery Backup',
@@ -48,7 +48,7 @@ export default function Products() {
         },
         {
           model: 'LactoSure ECO-SV',
-          image: '/images/lactosure-eco-analyzer-500x500.jpg',
+          image: '/images/images (43).jpeg',
           description: 'Solar + vibro stirrer integrated model',
           specs: {
             'Power': 'Solar + Battery',
@@ -116,7 +116,7 @@ export default function Products() {
         },
         {
           model: 'LactoSure ECO-SV-V4',
-          image: '/images/lactosure-eco-analyzer-500x500.jpg',
+          image: '/images/images (43).jpeg',
           description: 'Premium solar model with advanced parameters',
           specs: {
             'Power': 'Solar + Battery + AC Adapter',
@@ -192,7 +192,7 @@ export default function Products() {
         },
         {
           model: 'DPU Enterprise',
-          image: '/images/milk-data-processing-unit-2223219944-byzgmowa.jpg',
+          image: '/images/data-processor-for-milk-collection.jpg',
           description: 'Enterprise solution for large dairy plants',
           specs: {
             'Ports': '16 analyzer connections',
@@ -209,65 +209,7 @@ export default function Products() {
         }
       ]
     },
-    milking: {
-      name: '🐄 Milking Machines',
-      color: 'from-red-500 to-pink-400',
-      icon: '🐄',
-      description: 'Efficient automated milking equipment',
-      products: [
-        {
-          model: 'Single Cluster Milking Machine',
-          image: '',
-          description: 'Standard single unit milking for small farms',
-          specs: {
-            'Type': 'Single Cluster',
-            'Suitable For': 'Cows & Buffaloes',
-            'Dimensions': '64 x 138 x 95 cm',
-            'Weight': '58 kg',
-            'Power': '1 HP Motor',
-            'Capacity': 'Complete udder extraction',
-            'Material': 'High-quality steel',
-            'Warranty': '1 Year'
-          },
-          badge: null,
-          price: 'Request Quote'
-        },
-        {
-          model: 'Double Cluster Milking Machine',
-          image: '',
-          description: 'Twin extraction for increased efficiency',
-          specs: {
-            'Type': 'Double Cluster',
-            'Capacity': 'Dual simultaneous milking',
-            'Efficiency': '2x faster than single',
-            'Power': '2 HP Motor',
-            'Weight': '95 kg',
-            'Material': 'Industrial-grade steel',
-            'Vacuum': 'Adjustable 0.50-0.60 bar',
-            'Warranty': '1 Year'
-          },
-          badge: 'Popular',
-          price: 'Request Quote'
-        },
-        {
-          model: 'Single Bucket Milking Machine (Oil Type)',
-          image: '',
-          description: 'Portable bucket-style milking unit',
-          specs: {
-            'Type': 'Oil-Lubricated',
-            'Bucket Size': '25 liters',
-            'Weight': '45 kg',
-            'Portability': 'Easy to move',
-            'Maintenance': 'Simple & low-cost',
-            'Power': '0.75 HP',
-            'Dimensions': '50 x 100 x 85 cm',
-            'Warranty': '1 Year'
-          },
-          badge: null,
-          price: 'Request Quote'
-        }
-      ]
-    },
+    
     stirrers: {
       name: '🔄 Stirrers & Accessories',
       color: 'from-green-500 to-emerald-400',
@@ -276,7 +218,7 @@ export default function Products() {
       products: [
         {
           model: 'Ultrasonic Stirrer (Vibro)',
-          image: '/images/ultrasonic-milk-stirrer (1).jpeg',
+          image: '/images/51Dl4-GZDuL._AC_UF1000,1000_QL80_.jpg',
           description: 'Vibration-based milk sample mixing',
           specs: {
             'Technology': 'Ultrasonic vibration',
@@ -293,7 +235,7 @@ export default function Products() {
         },
         {
           model: 'Manual Stirrer',
-          image: '/images/ultrasonic-milk-stirrer (2).jpeg',
+          image: '/images/images (47).jpeg',
           description: 'Hand-operated sample mixing tool',
           specs: {
             'Type': 'Manual/Mechanical',
@@ -360,7 +302,7 @@ export default function Products() {
       products: [
         {
           model: 'Thermal Printer (58mm)',
-          image: '',
+          image: '/images/6176dMNN8nL.jpg',
           description: 'Fast receipt-style thermal printer',
           specs: {
             'Type': 'Thermal',
